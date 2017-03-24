@@ -3,7 +3,7 @@ export function Enum<
     T extends { [_: string]: V },
     V extends string
 >(definition: T): T;
-export function Enum(...values: any[]): object {
+export function Enum(...values: any[]): Object {
     if (typeof values[0] === "string") {
         const result: any = {};
         for (const value of values) {
@@ -15,10 +15,10 @@ export function Enum(...values: any[]): object {
     }
 }
 
-export type Enum<T extends object> = T[keyof T];
+export type Enum<T extends Object> = T[keyof T];
 
 export namespace Enum {
-    function hasOwnProperty(obj: object, prop: string): boolean {
+    function hasOwnProperty(obj: Object, prop: string): boolean {
         return Object.prototype.hasOwnProperty.call(obj, prop);
     }
 
